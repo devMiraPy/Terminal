@@ -1,0 +1,569 @@
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git init
+Initialized empty Git repository in C:/Users/Aluno.SENAI-LAB-35060/Desktop/Terminal/.git/
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">index.html
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">style.css 
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">README.md
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+        new file:   index.html
+        new file:   style.css
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "first commit"
+[master (root-commit) 926ae58] first commit
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+ create mode 100644 index.html
+ create mode 100644 style.css
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git log
+commit 926ae58807380aa78b27b3fb184f18cd28f3c6df (HEAD -> master)
+Author: Mirudo <nicolas.mira@edu.senai.br>
+Date:   Fri Apr 17 13:54:34 2026 -0300
+
+    first commit
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git shortlog
+Mirudo (1):
+      first commit
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git diff
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git branch -M main
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout -b Jornada
+Switched to a new branch 'Jornada'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout main
+Switched to branch 'main'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git branch
+  Jornada
+* main
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status                                                                                                                                                 
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)                                                                                                                                                   
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "Readme e index update"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "Readme e index update"
+[main 7e2d228] Readme e index update
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git diff
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git diff
+diff --git a/index.html b/index.html
+index 7e8b1af..f7cb5cd 100644
+Binary files a/index.html and b/index.html differ
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git remote add origin https://github.com/devMiraPy/Terminal.git
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git revert "Readme e index update"
+fatal: bad revision 'Readme e index update'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git revert Readme e index update  
+fatal: bad revision 'Readme'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git reset --hard Readme e index update
+fatal: ambiguous argument 'Readme': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git reset --hard "Readme e index update"
+fatal: ambiguous argument 'Readme e index update': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add index.html
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git reset --hard Readme e index update
+fatal: ambiguous argument 'Readme': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git log
+commit 7e2d22824e1c6f979ca69d9126d3bb79adb2456d (HEAD -> main)
+Author: Mirudo <nicolas.mira@edu.senai.br>
+Date:   Fri Apr 17 14:13:21 2026 -0300
+
+    Readme e index update
+
+commit 926ae58807380aa78b27b3fb184f18cd28f3c6df (Jornada)
+Author: Mirudo <nicolas.mira@edu.senai.br>
+Date:   Fri Apr 17 13:54:34 2026 -0300
+
+    first commit
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo ""> senha.env
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">.gitignore
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git ignore
+git: 'ignore' is not a git command. See 'git --help'.
+
+The most similar command is
+        diagnose
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">ocultos.txt
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ocultos.txt
+        senha.env
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ocultos.txt
+        senha.env
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ocultos.txt
+        senha.env
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status 
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "Index ajustes"
+[main 89909fe] Index ajustes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git push -u origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 1.50 KiB | 307.00 KiB/s, done.
+Total 10 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/devMiraPy/Terminal.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">.gitignore
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> echo "">senha.txt
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        senha.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        senha.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        aps.txt
+        senha.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .gitignore
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        senha.txt
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        senha.txt
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .gitignore
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> .ignore
+.ignore : O termo '.ignore' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável. Verifique a grafia do nome ou, se um caminho tiver sido incluído, veja se o caminho está 
+correto e tente novamente.
+No linha:1 caractere:1
++ .ignore
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.ignore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        senha.txt
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        ocultos.txt
+        senha.txt
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "add gitignore
+>> "
+[main b8b2ce4] add gitignore
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git log
+commit b8b2ce491597da85709667d833e90e9f604af5bb (HEAD -> main)
+Author: Mirudo <nicolas.mira@edu.senai.br>
+Date:   Fri Apr 17 15:31:19 2026 -0300
+
+    add gitignore
+
+commit 89909fe05aa585c7e5e707f064cca3d792abb85b (origin/main)
+Author: Mirudo <nicolas.mira@edu.senai.br>
+Date:   Fri Apr 17 14:43:48 2026 -0300
+
+    Index ajustes
+
+commit 7e2d22824e1c6f979ca69d9126d3bb79adb2456d
+Author: Mirudo <nicolas.mira@edu.senai.br>
+Date:   Fri Apr 17 14:13:21 2026 -0300
+
+    Readme e index update
+
+commit 926ae58807380aa78b27b3fb184f18cd28f3c6df (Jornada)
+Author: Mirudo <nicolas.mira@edu.senai.br>
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> 
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git clone https://github.com/varHarrie/varharrie.github.io.git
+Cloning into 'varharrie.github.io'...
+remote: Enumerating objects: 736, done.
+remote: Counting objects: 100% (93/93), done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 736 (delta 70), reused 62 (delta 62), pack-reused 643 (from 1)
+Receiving objects: 100% (736/736), 911.34 KiB | 7.29 MiB/s, done.
+Resolving deltas: 100% (369/369), done.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git clone https://github.com/11ty/eleventy-base-blog.git 
+Cloning into 'eleventy-base-blog'...
+remote: Enumerating objects: 2466, done.
+remote: Counting objects: 100% (58/58), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 2466 (delta 48), reused 43 (delta 43), pack-reused 2408 (from 2)
+Receiving objects: 100% (2466/2466), 673.07 KiB | 18.19 MiB/s, done.
+Resolving deltas: 100% (1305/1305), done.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> https://github.com/devjohnnydev/django-project.git
+https://github.com/devjohnnydev/django-project.git : O termo 'https://github.com/devjohnnydev/django-project.git' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável. 
+Verifique a grafia do nome ou, se um caminho tiver sido incluído, veja se o caminho está correto e tente novamente.
+No linha:1 caractere:1
++ https://github.com/devjohnnydev/django-project.git
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (https://github....ngo-project.git:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git clone https://github.com/devjohnnydev/django-project.git
+Cloning into 'django-project'...
+remote: Enumerating objects: 481, done.
+remote: Total 481 (delta 0), reused 0 (delta 0), pack-reused 481 (from 1)
+Receiving objects: 100% (481/481), 74.21 KiB | 4.37 MiB/s, done.
+Resolving deltas: 100% (245/245), done.
+Updating files: 100% (606/606), done.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        django-project/
+        ocultos.txt
+        senha.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add. .\django-project\
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .\django-project\
+warning: adding embedded git repository: django-project
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> django-project
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached django-project
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config set advice.addEmbeddedRepo false"
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   django-project
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        ocultos.txt
+        senha.txt
+
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "clone repo"
+[main b315a88] clone repo
+ 1 file changed, 1 insertion(+)
+ create mode 160000 django-project
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git revert clone repo 
+fatal: bad revision 'clone'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git revert "clone repo"
+fatal: bad revision 'clone repo'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aps.txt
+        ocultos.txt
+        senha.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .\aps.txt
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit "txt"
+error: pathspec 'txt' did not match any file(s) known to git
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "txt"
+[main e05c624] txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 aps.txt
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git revert "txt"
+fatal: bad revision 'txt'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git revert txt  
+fatal: bad revision 'txt'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git reset --hard "txt"
+fatal: ambiguous argument 'txt': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git reset "txt" --hard
+fatal: ambiguous argument 'txt': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git push -u oringin main 
+fatal: 'oringin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git push -u origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 795 bytes | 113.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/devMiraPy/Terminal.git
+   89909fe..e05c624  main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git brench                                                    
+git: 'brench' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git branch
+  Jornada
+* main
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout -b "Jornada"
+fatal: a branch named 'Jornada' already exists
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout Jornada     
+warning: unable to rmdir 'django-project': Directory not empty
+Switched to branch 'Jornada'
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout main   
+error: Your local changes to the following files would be overwritten by checkout:
+        index.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git merge main
+Updating 926ae58..e05c624
+error: Your local changes to the following files would be overwritten by merge:
+        index.html
+Please commit your changes or stash them before you merge.
+Aborting
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git pull https://github.com/devMiraPy/Novorep.git
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 490 bytes | 9.00 KiB/s, done.
+From https://github.com/devMiraPy/Novorep
+ * branch            HEAD       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "commit apos pull"
+On branch Jornada
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        django-project/
+        ocultos.txt
+        senha.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git add .
+warning: adding embedded git repository: django-project
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> django-project
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached django-project
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config set advice.addEmbeddedRepo false"
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git commit -m "commit apos pull"
+[Jornada ed52e74] commit apos pull
+ 4 files changed, 1 insertion(+)
+ create mode 160000 django-project
+ create mode 100644 ocultos.txt
+ create mode 100644 senha.txt
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout -b "Jornada"
+fatal: a branch named 'Jornada' already exists
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git branch
+* Jornada
+  main
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git push -u origin Jornada
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 685 bytes | 171.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'Jornada' on GitHub by visiting:
+remote:      https://github.com/devMiraPy/Terminal/pull/new/Jornada
+remote:
+To https://github.com/devMiraPy/Terminal.git
+ * [new branch]      Jornada -> Jornada
+branch 'Jornada' set up to track 'origin/Jornada'.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\Aluno.SENAI-LAB-35060\Desktop\Terminal> clear
+
